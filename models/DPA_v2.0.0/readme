@@ -1,13 +1,35 @@
-# README
+**Welcome to the official homepage for the Deep Potential with Attention (DPA) models.** 
 
-## Introduction
+These models have been intricately designed as a cornerstone of the OpenLAM (Open Large Atomic Model) Project, and they exhibit exceptional prowess in pretraining on expansive datasets derived from diverse Density Functional Theory (DFT) computations.
 
-This is the main page for DPA [1] models.
+The OpenLAM initiative is dedicated to fostering the development and widespread adoption of Large Atomic Models (LAMs). For a comprehensive understanding of the OpenLAM project and its objectives, we invite you to consult the detailed documentation provided [here](https://www.aissquare.com/openlam).
 
-[To be updated]
+**At the core of the DPA models is an innovative framework that not only excels in assimilating micro-structural information from extensive DFT datasets but also drastically diminishes the volume of data necessitated for fine-tuning in subsequent application-specific scenarios. **
+
+![image-44.png](https://aisquare-zjk.oss-cn-zhangjiakou.aliyuncs.com/data/datasets/22f95984-c22e-4fe3-9404-08b2e2c1adcd)
+
+**Fig.1: An analysis of sample efficiency across various models in downstream tasks reveals that pre-training on DPA can significantly decrease the volume of data required to achieve satisfactory accuracy levels.**
+
+The DPA models are supported by an elaborate infrastructure that encompasses a sequence of stages, including model pre-training, fine-tuning, distillation, and deployment. This is complemented by automated workflows that streamline the entire process from model inception to application.
+
+![image-45.png](https://aisquare-zjk.oss-cn-zhangjiakou.aliyuncs.com/data/datasets/233a2aab-6e95-444d-951d-2c3a1e6be475)
+
+**Fig.2: An overview of the proposed LAM workflow, (a) the multi-task pretraining process, in which different DFT-labeled data can be pretrained together by sharing a single descriptor and having their unique fitting nets, with sampling according to their importance. This results in a unified descriptor. (b) The fine-tuning process on the downstream dataset, using the pretrained unified descriptor and selecting a fitting net from upstream tasks or reinitializing the fitting net for the downstream dataset. (c) The distillation process using the fine-tuned model as a teacher model, iteratively performing MD simulations and adding labeled data to the training set to train a high-efficiency student model, which is convenient for downstream applications.**
+
+In unwavering support of the OpenLAM initiative's forward momentum, we are currently leveraging the DPA framework in a multi-tasking capacity. This approach allows for the integration of data uploaded by users and the facilitation of ongoing, dynamic training processes. Our ambition is to catalyze a transformative leap forward, wherein quantitative expansions in our dataset precipitate qualitative advancements in the field. We aspire to a future wherein the derivation of potential functions becomes as effortless as a mere click, thereby fundamentally transforming the landscape of potential function generation and accelerating scientific breakthroughs across a spectrum of disciplines.
+
+You can now upload your dataset to AIS-Square and choose to train it with DPA. Each dataset that passes verification will be further trained to generate a new DPA model version entry. You can track all the newly generated DPA model versions using the "Version History" feature on this page. We sincerely thank every contributor for their enthusiastic sharing. The DPA model uses the RMSE of atomic energies and forces as the evaluation metrics for the model. On the one hand, we test the performance of each version of the model on 18 standard datasets, which cover a wide range of scientific computing scenarios, to provide you with a comprehensive understanding of the model's performance. These performance statistics are updated in real-time to reflect the progress of each new DPA model version. You can click [here](https://aissquare.com/openlam?tab=Statistics) to view the latest model performance statistics. At the same time, we have also detailed the energy and force prediction performance of each automatically generated new DPA model version based on all the datasets, and you can find these details in the respective DPA model entry.
+
+If you have interested in joining the DPA project, feel free to upload your dataset to AIS-Square and check the "Upload to DPA" option to easily participate in the OpenLAM project with a single step. Should you encounter any issues, our [help documentation](https://github.com/deepmodeling/AIS-Square/blob/main/DPA/AIS-Square_Guide_en.md) on GitHub might provide the assistance you need.
 
 
+**NOTE：**
 
-## References
+**Currently, this model can only be fine-tuned based on the previous code, which is the code from the link [https://doi.org/10.5281/zenodo.10428497](https://doi.org/10.5281/zenodo.10428497); the model compatible with DeePMD-kit v3 will be released soon. An example of training v3's DPA2 from scratch can be found at [https://github.com/deepmodeling/deepmd-kit/blob/devel/examples/water/dpa2/input\_torch.json](https://github.com/deepmodeling/deepmd-kit/blob/devel/examples/water/dpa2/input_torch.json). When the time comes, fine-tuning will also use this input.json.**
 
-[1] Zhang, Duo, et al. "DPA-1: Pretraining of Attention-based Deep Potential Model for Molecular Simulation." *arXiv preprint arXiv:2208.08236* (2022).
+
+**References**
+
+[1] Duo Zhang, Hangrui Bi, Fu-Zhi Dai, Wanrun Jiang, Linfeng Zhang, and Han Wang. "DPA-1: Pretraining of attention-based deep potential model for molecular simulation." *arXiv preprint arXiv:2208.08236* (2022).
+
+[2] Duo Zhang, Xinzijian Liu, Xiangyu Zhang, Chengqian Zhang, Chun Cai, Hangrui Bi, Yiming Du et al. "DPA-2: Towards a universal large atomic model for molecular and material simulation." *arXiv preprint arXiv:2312.15492* (2023).
