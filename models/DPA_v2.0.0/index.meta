@@ -1,10 +1,9 @@
-Link: https://aisquare.oss-us-east-1.aliyuncs.com/data/models/66801968-80d2-4a7b-841b-9a5318126f62
-USLink: https://aisquare.oss-us-east-1.aliyuncs.com/data/models/66801968-80d2-4a7b-841b-9a5318126f62
-CNLink: https://aisquare-zjk.oss-cn-zhangjiakou.aliyuncs.com/data/models/66801968-80d2-4a7b-841b-9a5318126f62
-Author: Duo Zhang
-Reference: []
-ImageLink: ""
-ImageName: ""
-LinkFileName: model.pt
-readmename: DPA.md
-licence: LGPL-3.0
+title: DPA_v2.0.0
+publisher: iProzd
+license: LGPL-3.0
+repo:
+    - https://store.aissquare.com/models/4561b0c5-db9c-11ee-9b22-506b4b2349d8/model.pt
+reference:
+    - datasets/test_yingping_liang
+    - models/DPA_v2.0.0
+author: Duo Zhang
